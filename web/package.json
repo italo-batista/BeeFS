@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "appPath": "app",
+  "moduleName": "app",
+  "overrides": {}
+}
