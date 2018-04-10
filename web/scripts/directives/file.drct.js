@@ -6,6 +6,9 @@
             return {
                 restrict: 'E',
                 templateUrl: 'views/file.html',
+                scope: {
+                    fileInfo: '=info'
+                },                
             };
         });
 })();

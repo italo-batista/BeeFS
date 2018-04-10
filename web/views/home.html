@@ -8,10 +8,10 @@
 
         <div ng-repeat="file in list_dir">
             <div ng-if="file.is_dir">
-                Dir: {{file.name}}
+                <directory info='file'></directory>
             </div>
             <div ng-if="!file.is_dir">
-                File: {{file.name}}
+                <file info='file'></file>
             </div>
         </div>
 
