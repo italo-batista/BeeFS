@@ -15,44 +15,14 @@
     <script src="app.js"></script>
     <script src="scripts/controllers/home.ctrl.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/sidenav.css"> 
 </head>
 
 <body>
-
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-    </div>
-
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Welcome</h1>
-            <h2>Angular & Bootstrap Demo</h2>
-        </div>
-
-        <div class="panel panel-primary">
-            <div class="panel-heading">Status</div>
-            <div class="panel-body">
-                <h3>{{title}}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-sm-offset-4 logo">
-                    <a ui-sref="home"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div ng-view></div>  
+   
+    <div ng-view></div>     
 
 </body>
 

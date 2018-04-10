@@ -1,0 +1,14 @@
+/* Page content */
+.main {
+    
+}
+
+.mnavbar {
+    height: 80px;
+    background-color: blueviolet;
+}
+
+.mnavbar a {
+    color: aliceblue;
+}
+

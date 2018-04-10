@@ -5,7 +5,7 @@
     .config(function ($routeProvider) {
       $routeProvider
         .when('/', {
-          controller: 'HomeController',
+          controller: 'HomeController as ctrl',
           templateUrl: 'views/home.html'
         })
         .otherwise({
