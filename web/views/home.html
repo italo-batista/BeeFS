@@ -1,11 +1,23 @@
 <div class="main">
+
     <nav class="navbar fixed-top navbar-dark mnavbar">
         <a class="navbar-brand" href="#">BeeFS</a>
     </nav>
 
     <div ng-controller="HomeController as ctrl">
+
+        <div ng-repeat="file in list_dir">
+            <div ng-if="file.is_dir">
+                Dir: {{file.name}}
+            </div>
+            <div ng-if="!file.is_dir">
+                File: {{file.name}}
+            </div>
+        </div>
+
         <div class="sidenav">
             <a href="#">About</a>
-        </div>        
+        </div>
     </div>
+
 </div>

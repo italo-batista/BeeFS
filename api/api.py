@@ -4,7 +4,6 @@ import json
 import utils
 import os
 from flask import Flask, jsonify, request
-from importlib import reload
 
 app = Flask(__name__)
 
@@ -14,6 +13,8 @@ app = Flask(__name__)
 def list_dir(path):
     
     path = "/" + path
+
+    print(path)
 
     files = []    
     for file in os.listdir(path):
