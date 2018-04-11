@@ -3,6 +3,7 @@
 import json
 import utils
 import os
+import time
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -36,6 +37,48 @@ def list_dir(path):
 @app.route('/list_dir/home', methods=['GET'])
 def list_home():    
     return list_dir(utils.HOME_USER[1:])
+
+@app.route('/servers/<file_id>', methods=['GET'])
+def get_servers(file_id):
+
+    time.sleep(5); # para simular o tempo de uma requisição
+
+    servers = [
+        {
+            'server_name': file_id,
+            'hosted': True
+        },
+        {
+            'server_name': 'server02',
+            'hosted': False
+        },
+        {
+            'server_name': 'server03',
+            'hosted': False
+        },
+        {
+            'server_name': 'server04',
+            'hosted': False
+        },
+        {
+            'server_name': 'server05',
+            'hosted': True
+        },
+        {
+            'server_name': 'server06',
+            'hosted': False
+        },
+        {
+            'server_name': 'server07',
+            'hosted': False
+        },
+        {
+            'server_name': 'server08',
+            'hosted': True
+        },                                                        
+    ]
+
+    return jsonify(servers)
 
 
 if __name__ == "__main__":

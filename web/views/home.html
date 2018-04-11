@@ -18,7 +18,8 @@
 
         <div id="desktop" class="container-fluid cntnr-pdn">
             <div class="row">
-                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-mouseover="mouseOverFile(file)">                    
+                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" 
+                    ng-mouseenter="mouseEnter(file)" ng-mouseleave="mouseLeave()">                    
                     <div ng-if="file.is_dir">
                         <directory info='file'></directory>
                     </div>
@@ -30,8 +31,11 @@
         </div>
 
         <div class="sidenav">
-            <a href="#"></a>
-            {{mousedFile.name}}
+            <div class="container">
+                <span>{{mousedFile.name}}</span>
+                <list-servers info='mousedFile'></list-servers>
+                                
+            </div>
         </div>
     </div>
 
