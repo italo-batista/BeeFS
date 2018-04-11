@@ -1,13 +1,19 @@
 /* Page content */
 .main {
-    
+
+}
+
+#desktop {
+    margin-right: 300px; /* Equals to sidebar width */
 }
 
 .mnavbar {
     height: 80px;
+    display: flex;
+    align-items: center;
 }
-
-.mnavbar a {
+.mnavbar div {
+    font-size: 50px;
     color: rgb(112, 111, 111);
 }
 
@@ -37,7 +43,6 @@
     margin: 10px 10px;
     text-align: center;
     text-justify: auto;
-    text-indent: 
 }
 
 .file .glyphicon {
@@ -45,5 +50,9 @@
 }
 
 .file span {
-    color: blue;
+    color: black;
+}
+
+.cntnr-pdn { /* Set container-fluid padding in home */
+    padding: 10px 40px; 
 }

@@ -1,12 +1,12 @@
 <div class="main">
 
     <nav class="navbar fixed-top navbar-dark mnavbar">
-        <a class="navbar-brand" href="#">BeeFS</a>
+        <div class="navbar-brand">BeeFS</div>
     </nav>
 
     <div ng-controller="HomeController as ctrl">
 
-        <nav class="navbar fixed-top navbar-dark mnavbar dir-path">
+        <nav class="navbar fixed-top navbar-dark dir-path">
             <a class="navbar-brand" href="#">{{currentPath}}</a>
         </nav>
 
@@ -16,7 +16,7 @@
             <li class="active">Data</li>
         </ol> -->
 
-        <div class="container-fluid">
+        <div id="desktop" class="container-fluid cntnr-pdn">
             <div class="row">
                 <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1">
                     <div ng-if="file.is_dir">
