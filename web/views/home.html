@@ -18,7 +18,7 @@
 
         <div id="desktop" class="container-fluid cntnr-pdn">
             <div class="row">
-                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1">
+                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-mouseover="mouseOverFile(file)">                    
                     <div ng-if="file.is_dir">
                         <directory info='file'></directory>
                     </div>
@@ -31,6 +31,7 @@
 
         <div class="sidenav">
             <a href="#"></a>
+            {{mousedFile.name}}
         </div>
     </div>
 

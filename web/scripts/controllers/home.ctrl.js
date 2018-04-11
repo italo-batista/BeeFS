@@ -6,8 +6,6 @@ angular.module('app')
             var q = $q.defer();
             var request = "http://localhost:3000/" + "list_dir" + dirPath;
     
-            console.log(request)
-
             $http.get(request).then(function (json) {
                 q.resolve(json.data);
     
@@ -19,6 +17,10 @@ angular.module('app')
                 $scope.list_dir	= data;
                 $scope.currentPath = dirPath;
             });
+        };
+
+        $scope.mouseOverFile = function(file) {
+            $scope.mousedFile = file;
         };
 
         $scope.currentPath = "/home";      
