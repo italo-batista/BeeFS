@@ -6,17 +6,31 @@
 
     <div ng-controller="HomeController as ctrl">
 
-        <div ng-repeat="file in list_dir">
-            <div ng-if="file.is_dir">
-                <directory info='file'></directory>
-            </div>
-            <div ng-if="!file.is_dir">
-                <file info='file'></file>
+        <nav class="navbar fixed-top navbar-dark mnavbar dir-path">
+            <a class="navbar-brand" href="#">{{currentPath}}</a>
+        </nav>
+
+        <!-- <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol> -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1">
+                    <div ng-if="file.is_dir">
+                        <directory info='file'></directory>
+                    </div>
+                    <div ng-if="!file.is_dir">
+                        <file info='file' align="center"></file>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="sidenav">
-            <a href="#">About</a>
+            <a href="#"></a>
         </div>
     </div>
 

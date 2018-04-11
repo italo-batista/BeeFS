@@ -33,7 +33,7 @@ def list_dir(path):
 
     return jsonify(files)
 
-@app.route('/list_home', methods=['GET'])
+@app.route('/list_dir/home', methods=['GET'])
 def list_home():    
     return list_dir(utils.HOME_USER[1:])
 

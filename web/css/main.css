@@ -5,10 +5,45 @@
 
 .mnavbar {
     height: 80px;
-    background-color: blueviolet;
 }
 
 .mnavbar a {
-    color: aliceblue;
+    color: rgb(112, 111, 111);
 }
 
+.dir-path {
+    height: 40px;
+    background-color: rgb(231, 231, 231);
+}
+
+.dir-path a {
+    color: black;
+}
+
+.directory {
+    width: 50px;
+    height: 60px;
+    margin: 10px 10px;
+    text-align: center;
+}
+
+.directory .glyphicon {
+    font-size: 30px;
+}
+
+.file {
+    width: 50px;
+    height: 60px;
+    margin: 10px 10px;
+    text-align: center;
+    text-justify: auto;
+    text-indent: 
+}
+
+.file .glyphicon {
+    font-size: 30px;
+}
+
+.file span {
+    color: blue;
+}

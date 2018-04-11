@@ -9,7 +9,7 @@
     background-color: #fff;
     overflow-x: hidden;
     padding-top: 20px;
-    margin-top: 80px; /* Same as the height of navbar */
+    margin-top: 160px; /* Same as the height of navbar times 2 */
     border-left: 1px solid black;
 }
   

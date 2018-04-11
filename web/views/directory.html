@@ -1,1 +1,5 @@
- Dir : {{dirInfo.name}} - {{dirInfo.path}}
+<div class="directory">
+    <a class="glyphicon glyphicon-folder-close" aria-hidden="true" 
+        ng-click='listDirectory(dirInfo.path)' clickable></a>
+    <span>{{dirInfo.name}}</span>
+</div>

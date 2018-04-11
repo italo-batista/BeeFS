@@ -9,12 +9,13 @@
                 scope: {
                     dirInfo: '=info'
                 },                
-                // link: function (scope, element, attrs) {                
-                //     $http.get('http://localhost:3000/' + scope.current_path)
-                //         .then(function (res) {
-                //             scope.list_dir = res.data;
-                //         })
-                // }                
+                link: function (scope, element, attrs) {                
+                    scope.listDirectory = scope.$parent.listDirectory
+                    // $http.get('http://localhost:3000/' + scope.current_path)
+                    //     .then(function (res) {
+                    //         scope.list_dir = res.data;
+                    //     })                    
+                }                                  
             };
         });
 })();
