@@ -9,21 +9,26 @@
         <nav class="navbar fixed-top navbar-dark dir-path">
             <a class="navbar-brand" href="#">{{currentPath}}</a>
         </nav>
-
         <!-- <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="#">Library</a></li>
             <li class="active">Data</li>
         </ol> -->
 
-        <div id="desktop" class="container-fluid cntnr-pdn">
-            <div class="row">
-                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-click='clickFile(file)'>
-                    <div ng-if="file.is_dir">
-                        <directory info='file'></directory>
-                    </div>
-                    <div ng-if="!file.is_dir">
-                        <file info='file'></file>
+        <div id="desktop">
+            <div clas="dskout">
+                <div clas="dskin">
+                    <div class="container-fluid cntnr-pdn">
+                        <div class="row">
+                            <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-click='clickFile(file)'>
+                                <div ng-if="file.is_dir">
+                                    <directory info='file'></directory>
+                                </div>
+                                <div ng-if="!file.is_dir">
+                                    <file info='file'></file>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
