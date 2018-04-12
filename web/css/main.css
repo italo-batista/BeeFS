@@ -23,6 +23,22 @@
     padding: 10px 10px;   
 }
 
+.dskout span {
+    background-color: #f01616;
+    color: blue;
+    font-size: 20px;
+    border-left: thick solid #00ff00;
+    border-top: thick solid #00ff00;
+}
+
+.dskin {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    padding: 10px 10px;   
+}
+
 .mnavbar {
     height: 80px;
     display: flex;
