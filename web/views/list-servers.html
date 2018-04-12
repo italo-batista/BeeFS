@@ -10,7 +10,7 @@
         <div ng-if="!loadingclickedFileServers">
             <md-content>
                 <md-list>
-                    <md-list-item class="md-3-line" ng-repeat="server in clickedFileServersList | orderBy : ''" class="col-md-1" ng-click=''>
+                    <md-list-item class="md-3-line" ng-repeat="server in clickedFileServersList | orderBy : '-hosted'" class="col-md-1">
                         <div class="md-list-item-text">
                             <h3>{{server.server_name}}</h3>
                         </div>

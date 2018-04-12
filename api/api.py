@@ -73,7 +73,7 @@ def get_servers(file_id):
             'hosted': False
         },
         {
-            'server_name': 'server08',
+            'server_name': file_id,
             'hosted': True
         },                                                        
     ]

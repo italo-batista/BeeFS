@@ -70,8 +70,9 @@ angular.module('app')
                 });
 
                 function MyMigrationController($scope, $mdDialog, $q, $http) {
-                    var self = this;
-                    $scope.showInfos = false;
+                    
+                    $scope.teste = [1,2,3];
+
                     $scope.hide = function () {
                         $mdDialog.hide();
                     };
@@ -81,24 +82,22 @@ angular.module('app')
                     $scope.answer = function (answer) {
                         $mdDialog.hide(answer);
                     };
-                    function getEstatisticas() {
+                    $scope.migrateFileTo = function (fileId) {
+                        
+                        // fileId is currently file.path. CHANGE IT
+                        
+                        console.log($scope.targetServer);
+                        console.log(fileId);
+
                         // var q = $q.defer();
-                        // var route = "/universidade";
-
-
+                        // var route = "";
                         // $http.get(route).then(function (info) {
                         //     q.resolve(info.data);
-                        //     self.pontoDeConsumo = info.data.infos;
-                        //     self.estatisticas = info.data.estatisticas;
-                        //     self.pontoDeConsumo.isUFCG = true;
+                        //     // atribuições aqui
                         // }, function (info) {
                         // });
                         // return q.promise;
                     }
-                    var init = function () {
-                        getEstatisticas();
-                    };
-                    init();
                 }
             }
 
