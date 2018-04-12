@@ -1,8 +1,28 @@
-<div ng-if="!loadingMousedFileServers">
-    {{mousedFileServersList}}
-</div>
-<div ng-if="loadingMousedFileServers">
-    <div layout="row" layout-align="center center">
-        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+<div class="list-servers">
+    <div ng-if='anyFileClicked'>
+        <md-toolbar class="md-theme-light">
+            <div class="md-toolbar-tools">
+                Hospedado em:
+            </div>
+        </md-toolbar>
+    </div>
+    <div>
+        <div ng-if="!loadingclickedFileServers">
+            <md-content>
+                <md-list>
+                    <md-list-item class="md-3-line" ng-repeat="server in clickedFileServersList | orderBy : ''" class="col-md-1" ng-click=''>
+                        <div class="md-list-item-text">
+                            <h3>{{server.server_name}}</h3>
+                        </div>
+                        <md-divider md-inset ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </div>
+        <div ng-if="loadingclickedFileServers">
+            <div layout="row" layout-align="center center">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+        </div>
     </div>
 </div>

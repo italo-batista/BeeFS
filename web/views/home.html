@@ -9,21 +9,26 @@
         <nav class="navbar fixed-top navbar-dark dir-path">
             <a class="navbar-brand" href="#">{{currentPath}}</a>
         </nav>
-
         <!-- <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="#">Library</a></li>
             <li class="active">Data</li>
         </ol> -->
 
-        <div id="desktop" class="container-fluid cntnr-pdn">
-            <div class="row">
-                <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-click='clickFile(file)'>
-                    <div ng-if="file.is_dir">
-                        <directory info='file'></directory>
-                    </div>
-                    <div ng-if="!file.is_dir">
-                        <file info='file'></file>
+        <div id="desktop">
+            <div clas="dskout">
+                <div clas="dskin">
+                    <div class="container-fluid cntnr-pdn">
+                        <div class="row">
+                            <div ng-repeat="file in list_dir | orderBy : '-is_dir'" class="col-md-1" ng-click='clickFile(file)'>
+                                <div ng-if="file.is_dir">
+                                    <directory info='file'></directory>
+                                </div>
+                                <div ng-if="!file.is_dir">
+                                    <file info='file'></file>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,12 +36,24 @@
 
         <div class="sidenav">
             <div class="container-fluid">
-                <span>{{mousedFile.name}}</span>
-                <list-servers info='mousedFile'></list-servers>
+                <div ng-if='anyFileClicked'>
+                    <md-toolbar class="md-theme-light">
+                        <h2 class="md-toolbar-tools">
+                            <div layout="row" layout-align="space-between center">
+                                <span>Nome: {{clickedFile.name}}</span>
+                                <md-button class="md-icon-button" ng-click="openMigrationDialog()">
+                                    <md-icon ng-click=''>call_split</md-icon>
+                                </md-button>                                
+                            </div>
+                        </h2>
+                    </md-toolbar>
+                </div>
+                <list-servers info='clickedFile'></list-servers>
             </div>
         </div>
 
-        <!-- <md-progress-linear md-mode="query" ng-disabled="loadingDirectory"></md-progress-linear> -->
+        <md-progress-linear md-mode="query" ng-disabled="!loadingDirectory"></md-progress-linear>
+
     </div>
 
 </div>

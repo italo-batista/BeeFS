@@ -45,7 +45,7 @@ def get_servers(file_id):
 
     servers = [
         {
-            'server_name': file_id,
+            'server_name': 'server01',
             'hosted': True
         },
         {

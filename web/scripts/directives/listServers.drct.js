@@ -10,11 +10,11 @@
                 //     fileInfo: '=info'
                 // },                
                 link: function (scope, element, attrs) {               
-                    scope.mousedFileServersList = scope.$parent.mousedFileServersList;
-                    // const fileId = scope.mousedFile.name; /* CHANGE TO PASS FILE_ID */
+                    scope.clickedFileServersList = scope.$parent.clickedFileServersList;
+                    // const fileId = scope.clickedFile.name; /* CHANGE TO PASS FILE_ID */
                     // $http.get('http://localhost:3000/' + 'servers/' + fileID) 
                     //     .then(function (res) {
-                    //         scope.mousedFileServersList = res.data;
+                    //         scope.clickedFileServersList = res.data;
                     //     })                    
                 }                                  
             };
