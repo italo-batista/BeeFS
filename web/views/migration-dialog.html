@@ -1,36 +1,36 @@
 <md-dialog>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h2>Server Migration</h2>
-            <span flex></span>
-            <md-button class="md-icon-button" ng-click="cancel()">
-                <md-icon>clear</md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-
-    <md-dialog-content>
-        <div class="md-dialog-content">
-            <div ng-if="!loadingclickedFileServers">
-                {{ targetServer }}
-                <md-radio-group ng-model="targetServer">
-                    <md-radio-button ng-repeat="server in clickedFileServersList | orderBy : '-hosted'" ng-value="server.server_name" ng-disabled="server.hosted">
-                        {{server.server_name}}
-                    </md-radio-button>
-                </md-radio-group>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Server Migration</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon>clear</md-icon>
+                </md-button>
             </div>
-            <div ng-if="loadingclickedFileServers">
-                <div layout="row" layout-align="center center">
-                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div ng-if="!loadingclickedFileServers">
+                    <md-radio-group ng-model="migCtrl.targetServer">
+                        <md-radio-button ng-repeat="server in clickedFileServersList | orderBy : '-hosted'" ng-value="server.server_name" ng-disabled="server.hosted">
+                            {{server.server_name}}
+                        </md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div ng-if="loadingclickedFileServers">
+                    <div layout="row" layout-align="center center">
+                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                    </div>
                 </div>
             </div>
-        </div>
-    </md-dialog-content>
+        </md-dialog-content>
 
-    <md-dialog-actions layout="row">
-        <md-button ng-click="migrateFileTo(clickedFile.path)">
-            Migrate
-        </md-button>
-    </md-dialog-actions>
-
+        <md-dialog-actions layout="row">
+            <md-button ng-click="migrateFileTo(clickedFile.path)" type="submit">
+                Migrate
+            </md-button>
+        </md-dialog-actions>
+    </form>
 </md-dialog>

@@ -57,7 +57,7 @@ angular.module('app')
             }
 
             $scope.openMigrationDialog = function (ev) {
-
+        
                 $mdDialog.show({
                     templateUrl: '../../views/migration-dialog.html',
                     parent: angular.element(document.body),
@@ -66,12 +66,14 @@ angular.module('app')
                     clickOutsideToClose: true,
                     fullscreen: $scope.customFullscreen,
                     controller: MyMigrationController,
-                    controllerAs: 'ctrl'
+                    controllerAs: 'migCtrl'
                 });
 
                 function MyMigrationController($scope, $mdDialog, $q, $http) {
                     
-                    $scope.teste = [1,2,3];
+                    const self = this;
+
+                    self.targetServer = "Nada";
 
                     $scope.hide = function () {
                         $mdDialog.hide();
@@ -86,7 +88,7 @@ angular.module('app')
                         
                         // fileId is currently file.path. CHANGE IT
                         
-                        console.log($scope.targetServer);
+                        console.log(self.targetServer);
                         console.log(fileId);
 
                         // var q = $q.defer();
