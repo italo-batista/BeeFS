@@ -2,5 +2,7 @@
     {{mousedFileServersList}}
 </div>
 <div ng-if="loadingMousedFileServers">
-    Loading...
+    <div layout="row" layout-align="center center">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
 </div>

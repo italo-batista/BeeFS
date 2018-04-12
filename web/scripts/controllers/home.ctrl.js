@@ -1,9 +1,13 @@
 angular.module('app')
-    .controller('HomeController', ['$scope', "$http", "$q", "$timeout", function ($scope, $http, $q, $timeout) {
+    .controller('HomeController', 
+        ["$scope", "$http", "$q", "$timeout", 
+        function ($scope, $http, $q, $timeout) {
 
         const self = this;
-
+        
         $scope.listDirectory = function (dirPath) {
+
+            $scope.loadingDirectory = true;
 
             var q = $q.defer();
             var request = "http://localhost:3000/" + "list_dir" + dirPath;
@@ -16,6 +20,7 @@ angular.module('app')
             });
 
             q.promise.then(function (data) {
+                $scope.loadingDirectory = false;
                 $scope.list_dir = data;
                 $scope.currentPath = dirPath;
             });
@@ -52,5 +57,5 @@ angular.module('app')
 
         $scope.currentPath = "/home";
         $scope.listDirectory($scope.currentPath);
-
+        $scope.loadingDirectory = true;
     }]);

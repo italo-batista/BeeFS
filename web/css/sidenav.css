@@ -1,8 +1,8 @@
 /* The sidenav */
 .sidenav {
     height: 100%;
-    width: 300px;
-    position: fixed;
+    width: 400px;
+    position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
@@ -11,21 +11,6 @@
     padding-top: 20px;
     margin-top: 160px; /* Same as the height of navbar times 2 */
     border-left: 1px solid black;
-}
-  
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
