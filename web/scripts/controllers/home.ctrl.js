@@ -45,7 +45,6 @@ angular.module('app')
 
                 $http.get(request).then(function (json) {
                     q.resolve(json.data);
-
                 }, function (info) {
                     console.log(info);
                 });
@@ -57,7 +56,7 @@ angular.module('app')
             }
 
             $scope.openMigrationDialog = function (ev) {
-        
+
                 $mdDialog.show({
                     templateUrl: '../../views/migration-dialog.html',
                     parent: angular.element(document.body),
@@ -70,7 +69,7 @@ angular.module('app')
                 });
 
                 function MyMigrationController($scope, $mdDialog, $q, $http) {
-                    
+
                     const self = this;
 
                     self.targetServer = "Nada";
@@ -85,20 +84,21 @@ angular.module('app')
                         $mdDialog.hide(answer);
                     };
                     $scope.migrateFileTo = function (fileId) {
-                        
+
                         // fileId is currently file.path. CHANGE IT
                         
-                        console.log(self.targetServer);
-                        console.log(fileId);
+                        postData = {
+                            'fileId': fileId,
+                            'targetServer': self.targetServer
+                        }
 
-                        // var q = $q.defer();
-                        // var route = "";
-                        // $http.get(route).then(function (info) {
-                        //     q.resolve(info.data);
-                        //     // atribuições aqui
-                        // }, function (info) {
-                        // });
-                        // return q.promise;
+                        var route = 'http://localhost:3000/' + 'migrate';
+                        $http.put(route, postData)
+                            .then(function (json) {
+                                console.log(json);
+                            }, function (info) {
+                                console.log(info);
+                            });
                     }
                 }
             }

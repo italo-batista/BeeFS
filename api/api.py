@@ -41,7 +41,7 @@ def list_home():
 @app.route('/servers/<file_id>', methods=['GET'])
 def get_servers(file_id):
 
-    time.sleep(5); # para simular o tempo de uma requisição
+    time.sleep(3); # para simular o tempo de uma requisição
 
     servers = [
         {
@@ -80,6 +80,18 @@ def get_servers(file_id):
 
     return jsonify(servers)
 
+@app.route('/migrate',  methods=['PUT'])
+def migrate():
+
+    if not request.json:
+        abort(400)
+
+    file_id = request.json.get('fileId')
+    target_server = request.json.get('targetServer')
+    
+    time.sleep(3); # para simular o tempo de uma requisição
+
+    return jsonify(['simulando success caso algo precise ser retornado']) 
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 3000))
