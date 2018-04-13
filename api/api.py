@@ -4,6 +4,7 @@ import json
 import utils
 import os
 import time
+import random
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -92,6 +93,16 @@ def migrate():
     time.sleep(3); # para simular o tempo de uma requisição
 
     return jsonify(['simulando success caso algo precise ser retornado']) 
+
+@app.route('/checksum',  methods=['GET'])
+def checksum(file_id):
+    
+    time.sleep(3); # para simular o tempo de uma requisição
+    checksum = random.randint(100000000, 300000000)
+
+    return jsonify({
+        'checksum': checksum
+    }) 
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 3000))

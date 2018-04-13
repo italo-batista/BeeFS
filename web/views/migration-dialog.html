@@ -12,6 +12,7 @@
 
         <md-dialog-content>
             <div class="md-dialog-content">
+                <p> Selecione o servidor para o qual migrar o arquivo </p>
                 <div ng-if="!loadingclickedFileServers">
                     <md-radio-group ng-model="migCtrl.targetServer">
                         <md-radio-button ng-repeat="server in clickedFileServersList | orderBy : '-hosted'" ng-value="server.server_name" ng-disabled="server.hosted">
@@ -24,6 +25,11 @@
                         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                     </div>
                 </div>
+            </div>
+            <div ng-if="migratePreStatus" class="mig-pre-status">
+                <b layout="row" layout-align="center center" class="md-padding">
+                {{migratePreStatus}}
+            </b>
             </div>
         </md-dialog-content>
 

@@ -94,3 +94,11 @@ md-toolbar .md-toolbar-tools {
     color: #4c4c4c;
     background-color: #afafaf;
 }
+
+.dialogdemoBasicUsage .mig-pre-status {
+  color: #c60008; 
+}
+
+.mig-pre-status{
+    color: #32cd32;
+}

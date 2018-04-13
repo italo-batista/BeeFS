@@ -96,6 +96,7 @@ angular.module('app')
                         $http.put(route, postData)
                             .then(function (json) {
                                 console.log(json);
+                                $scope.migratePreStatus = "O arquivo será migrado para o servidor selecionado no futuro."
                             }, function (info) {
                                 console.log(info);
                             });
