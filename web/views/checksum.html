@@ -1,0 +1,22 @@
+<div class="list-servers">
+    <div ng-if='anyFileClicked'>
+        <md-toolbar class="md-theme-light">
+            <div class="md-toolbar-tools">
+                Checksum:
+            </div>
+        </md-toolbar>
+
+        <md-content>
+            <div class="row">
+                <div class="col-xs-6" ng-if"!loadingChecksum">
+                    <div layout="row" layout-align="center center" flex>
+                        {{clieckedFileChecksum}}
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <md-button class="md-raised checksum-button" ng-click="calcChecksum()">Calculate</md-button>
+                </div>
+            </div>            
+        </md-content>
+    </div>
+</div>

@@ -95,10 +95,20 @@ md-toolbar .md-toolbar-tools {
     background-color: #afafaf;
 }
 
-.dialogdemoBasicUsage .mig-pre-status {
-  color: #c60008; 
-}
-
 .mig-pre-status{
     color: #32cd32;
 }
+
+.md-button.md-raised.checksum-button {
+    font-weight: bold;
+    color : rgb(255, 255, 255);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: #BDBDBD;
+  }
+  
+  .md-button.md-raised.checksum-button:not([disabled]):hover {
+    font-weight: bold;
+    color : rgb(255, 255, 255);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: #9E9E9E;
+  }

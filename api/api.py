@@ -94,7 +94,7 @@ def migrate():
 
     return jsonify(['simulando success caso algo precise ser retornado']) 
 
-@app.route('/checksum',  methods=['GET'])
+@app.route('/checksum/<file_id>',  methods=['GET'])
 def checksum(file_id):
     
     time.sleep(3); # para simular o tempo de uma requisição
